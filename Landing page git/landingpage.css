@@ -1,0 +1,603 @@
+/*import poppins font */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@import url("https://use.typekit.net/lgg5dgg.css");
+
+/*Default layout for webpage*/
+html {font-size: 10px;
+margin: 0px;
+padding: 0px;
+
+font-family: 'Poppins', sans-serif;
+min-width: 500px;
+}
+
+@media screen and (max-width:980px){
+
+    .yt-video {
+
+        display: none;
+    }
+
+    .core-picture {
+
+        display: none;
+    }
+    
+    figcaption {
+
+        display: none;
+    }
+    
+   .work-container {
+
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+   }
+}
+
+/* this grid is the overall layout ouf the page ! will need to be changed to get the exact references*/
+body {
+    margin:0px;
+display: grid;
+grid-template-rows:  [start] auto [spacing-left] 1fr  [spacing-right] Auto  [end] ;
+grid-template-columns: 1fr;
+/*gap: 10px 0px;*/
+
+grid-template-areas: 
+
+"header "
+"main "
+"footer ";
+background-color: #EAD37F;
+}
+
+
+/*Puts header in defined area plus creates a grid inside the header are to display logo and nav-bar
+
+-sets the logo-container area to take up as much space as needed to display full text
+-width auto allows to have a header the size of the elements it's containing 
+
+*/
+
+.header-bis {
+  
+    grid-area: header;
+    
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 100px;
+    
+   
+    
+    width: 100%;
+    z-index: 1;
+    }
+
+header {
+  
+    background-color: #EAD37F;
+
+    grid-area: header;
+    
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 100px;
+    
+   
+    position:fixed;
+    width: 100%;
+    z-index: 3;
+
+    }
+
+    
+   
+
+/*Puts the logocontainer in one row*/
+.logo-container {
+display: flex;
+align-items: center;
+}
+
+
+/*Set width to og, while height stays the same*/
+.logo-image {
+height: 75px;
+width: auto;
+}
+
+.sunset {
+   font-size: 2.5em; 
+}
+/*this media query tells the name to disapear after the 720 px resize threshold*/
+@media screen and (max-width:720px){
+    
+    .sunset {
+
+        display: none;
+    }
+    
+}
+
+/*Entre le logo et sunset il y a une marge de 10px pr chaque élément */
+.logo-wrapper, .sunset {
+
+    margin: 0px 10px;
+}
+
+/*Puts the nav-bar in two row*/
+    .nav-bar {
+
+        grid-column-start: 2;
+        
+       
+
+        display: flex;
+        align-items: center;
+        justify-content:center;
+
+        
+    }
+
+    /*this media query allows to nav bar to stack at 980px width*/
+
+    @media screen and (max-width:980px){
+
+        .nav-bar {
+
+            grid-column-start: 2;
+            
+           
+    
+            display: flex;
+           flex-direction: column;
+           
+        }
+        
+    }
+    .nav-bar>div {
+        margin: 0px 5rem;
+
+    }
+    .nav-bar>div>p {
+
+        font-size: 2rem;
+        margin: 0px;
+        
+    }
+
+    /*this media slightly resizes the text */
+    @media screen and (max-width:500px){
+
+        .nav-bar>div>p {
+            font-size: 1.8rem;
+        }
+        
+    }
+
+
+    a {
+
+        text-decoration: inherit;
+        cursor: inherit;
+        color: black;
+    }
+    main {
+
+
+        background-color: wheat;
+        grid-area: main;
+    
+        display: grid;
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "hero " 
+        "core "
+        "work "
+        "find "
+        "form "
+        ;
+    }
+
+    a:hover {
+        font-weight: 800;
+    }
+
+.hero {
+   
+    grid-area: hero;
+   
+}
+
+.hero-container {
+
+    
+display: flex;
+
+align-items: center;
+justify-content: center  ;
+
+
+}
+
+
+.hero-image {
+
+width: 100%;
+height: auto;
+
+
+}
+
+/*Media query needs to be added so text rezises*/
+.hero-caption {
+color:white;
+
+font-family: blenny, sans-serif;
+
+font-weight: 900;
+
+font-style: normal;
+
+position: absolute;
+
+text-align: center;
+font-size: 3.5vw;
+z-index: 1;
+
+
+}
+
+
+.core_container {
+background-color: #E4E4DC;
+grid-area: core; 
+
+height: auto;
+
+display: grid;
+grid-template-rows: 20% 1fr;
+grid-template-columns: repeat(12,1fr);
+height: 750px;
+
+
+
+}
+
+.core-title {
+
+font-size: 2rem;
+
+margin: 50px 0px 30px 0px;
+
+grid-row-start: 1;
+grid-row-end: 1;
+
+grid-column-start: 5;
+grid-column-end: 9;
+
+display: flex;
+justify-content: center;
+
+}
+
+.core-wrapper {
+
+
+    background-color: white;
+
+    grid-row-start: 2;
+    grid-row-end: 2;
+
+    grid-column-start: 1;
+    grid-column-end: 13;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+    margin: 30px 25px 50px 25px;
+    padding: 10px;
+
+    border-radius: 7px;
+}
+
+
+
+.core-picture {
+   
+    width:100%;
+    border-radius: 14px;
+    overflow: hidden;
+    min-width: 412px;
+ 
+    
+}
+
+.core-article>article {
+display: flex;
+align-content: center;
+margin: 1.5rem;
+font-size: 1.8rem;
+}
+
+
+.our-work {
+    background-color: #967A54;
+    grid-area: work;
+    padding: 50px;
+    height: 750px;
+    display: grid;
+    grid-template-rows: 20% 1fr;
+    grid-template-columns: repeat(12,1fr);
+  
+    }
+
+    .work-title {
+        font-size: 2rem;
+
+        margin: 50px 0px 50px 0px;
+        
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+        grid-column-start: 3;
+        grid-column-end: 11;
+        
+        display: flex;
+        justify-content: center;
+
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .work-container {
+
+    background-color: white;
+
+
+    grid-row-start: 2;
+    grid-row-end: 2;
+
+    grid-column-start: 1;
+    grid-column-end: 13;
+
+
+   
+    padding: 10px;
+
+    border-radius: 7px;
+
+    height: auto;
+
+
+   
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items :center
+        
+    }
+
+    .work-text, .yt-video {
+
+        margin: 10px;
+    }
+
+    .yt-video {
+
+    width: auto;
+    height: auto;
+
+
+
+    
+    }
+
+    .work-text {
+        position: relative;
+        font-size: 1.8rem;
+        text-align: center;
+       
+    }
+  
+
+
+
+
+
+.find-us-container {
+    background-color: #E4E4DC;
+    grid-area: find;
+
+    padding: 50px;
+    height: 750px;
+    display: grid;
+    grid-template-rows: 20% 1fr;
+    grid-template-columns: repeat(12,1fr);
+    
+    }
+
+    .find-us-title {
+            font-size: 2rem;
+    
+            margin: 50px 0px 50px 0px;
+            
+            grid-row-start: 1;
+            grid-row-end: 1;
+            
+            grid-column-start: 5;
+            grid-column-end: 9;
+            
+            display: flex;
+            justify-content: center;
+    
+            color: black;
+
+    }
+
+    .maps-container{
+
+        background-color: white;
+
+
+        grid-row-start: 2;
+        grid-row-end: 2;
+    
+        grid-column-start: 1;
+        grid-column-end: 13;
+    
+    
+        margin: 50px 25px 50px 25px;
+        padding: 10px;
+    
+        border-radius: 7px;
+    
+        height: auto;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .g-maps {
+        width: 100%;
+        height: 450px;
+        border:0px;
+    }
+
+
+.form-container {
+
+    background-color:#967A54;
+    grid-area: form;
+    padding: 3rem;
+    height: 5OOrem;
+    display: grid;
+    grid-template-rows: 20% 1fr;
+    grid-template-columns: repeat(12,1fr);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  
+   
+    }
+
+
+    .title-form {
+
+        font-size: 2rem;
+
+        margin: 50px 0px 50px 0px;
+        
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+        grid-column-start: 4;
+        grid-column-end: 10;
+        
+        display: flex;
+        justify-content: center;
+
+        color: white;
+        
+    }
+
+    
+
+    .survey-form {
+    grid-row-start: 2;
+    grid-row-end: 2;
+
+    grid-column-start: 4;
+    grid-column-end: 10;
+
+        display: flex;
+        flex-direction: column;
+    
+        width: 100%;
+    
+
+        background-color: white;
+
+        padding: 1rem;
+
+        height: auto;
+        margin: 1rem;
+
+        max-width: 30rem;
+       
+    }
+    
+    
+    .nom, .phone, .email {
+    /*permet de mettre une marge supérieure et inférieur sur chaque élément de cette div*/
+        margin:1rem 0px;
+        font-size: 1.8rem;
+        
+    }
+    .req-info {
+   
+    
+    
+        /*Here my éléments will stretch */
+        margin: 1rem;
+        }    
+
+        .req-info input {
+
+            width: 100% ;
+            height: 3rem;
+            
+        
+        }
+        .button-container {
+
+            display: flex;
+            justify-content: center;
+            margin:1rem 1rem;
+            
+            }
+            
+            
+            button {
+            
+            
+                margin-top: 15px;
+                  height: 3.4rem;
+                  width: 100%;
+                  
+                  border: none;
+                  border-radius: 7px;
+                 
+                  letter-spacing: 1px;
+                
+            
+            }
+            
+
+footer {
+background-color: #EAD37F;
+grid-area: footer;
+
+font-weight: 800;
+color: black;
+
+height: 50px;
+vertical-align: middle;
+text-align: center  ;
+
+}
